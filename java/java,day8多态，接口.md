@@ -1,4 +1,4 @@
-# java,day8多态
+# java,day8多态,抽象接口
 
 - 多态
 
@@ -69,7 +69,6 @@
       System.out.println("飞")
     }
   }
-
   ```
 
   - 多态的弊端如上不能使用子类superman的fly方法，子类的特有属性和行为都不能使用
@@ -107,22 +106,25 @@
 
       ## 接口Interface
 
+      ### 接口实例化必须用子类进行
+
       ```java
-      class Interface {
+      class Demo_Interface {
         public static void main(String[] args) {
           Demo d  = new Demo();
-          d.print();
-          
+          d.print(); 	
+          Inter i = new Demo();	//父类引用指向子类对象，类似继承，利用子类来实例化，实现
+          i.print();
         }
       }
       interface Inter {
-        public static final int num = 10;
+        public static final int num = 10;	//接口中定义的成员变量都是常量，子类只能访问不能修改
         //public Inter(){} //接口中没有构造方法
         public abstract void print();  //方法中不能定义抽象方法
       }
       class Demo extends Object implements Inter { //接口中没有构造方法，需要重object中继承
-        public void print() {
-          System.out.println(num);
+        public void print() {			//重写接口中的抽象方法(必须的)
+          System.out.println(num);	//输出接口中的num = 10;
         }
       }
       ```
@@ -147,5 +149,7 @@
           }
         }
         ```
+
+        ​
 
         ​
