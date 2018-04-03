@@ -1,0 +1,20 @@
+启动小demo:
+	安装依赖
+		npm install
+	
+	启动终端
+		 npm run dev(localhost:8080)
+		 npm run db (localhost:3000)
+
+	初始化mock数据通过项目目录执行 : node mock.js
+
+	
+	1.在目录下新建mock.js和db.json文件
+
+	安装模块 cnpm i mockjs json-server --save-dev
+
+文档:
+	http://mockjs.com/
+	https://segmentfault.com/a/1190000010449453?_ea=2302005)
+	
+		

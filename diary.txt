@@ -4,3 +4,6 @@
 webview中显示和手机网页显示不同可能受到用户字体大小设置不同所影响，
 
 1.先定位功能点
+2.post请求中request payload 和 formdata区别为什么后台取值时情况会不同
+3.mockjs,lavas
+4.hbuilder等混合开发办法
