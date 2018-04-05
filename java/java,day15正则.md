@@ -31,4 +31,9 @@
   bd1.substract
   ```
 
-  ​
+- SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
+
+  - Date d = new Date();
+  - sdf.format(d)
+
+- ​
