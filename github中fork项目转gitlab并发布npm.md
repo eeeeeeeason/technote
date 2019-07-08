@@ -1,0 +1,12 @@
+#github中fork项目转gitlab并发布npm
+ - 使用的是elementui
+ - fork后将所有elementui关键字修改为cat8-elementui
+ - package.json修改版本号,每次版本号必须不同才能发布
+ - 注册npm账号，在项目中登录，npm publish
+ - gitlab中创建项目
+   - 修改remote远程地址，可以直接到.git中的config修改，干掉目前的remote
+   - git remote add origin http://xxxx你的gitlabip/eason/cat8-elementui.git
+   - （这里要注意不能用git@abc:/自带的相对地址，他会报Connection refused fatal: Could not read from remote repository. Please make sure you have the correct access rights）
+   - git push -u origin --all
+   - git push -u origin --tags
+   - 提交所有内容和tags
