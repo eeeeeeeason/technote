@@ -1,0 +1,16 @@
+#1M百度云ccs高ping战士的日常
+- 原本以为是我带宽低的原因，ssh总是断开。
+- 修改ssh 服务端或客户端心跳配置
+  - 服务端
+  - vim /etc/ssh/sshd_config
+  - ClientAliveInterval 30 这个其实就是SSH Server与Client的心跳超时时间，也就是说，当客户端没有指令过来，Server间隔ClientAliveInterval的时间（单位秒）会发一个空包到Client来维持心跳，保证Session有效。
+  - ClientAliveCountMax 3 重连次数
+  - service sshd restart
+  - 客户端
+  ```
+    Host myhostshortcut
+     HostName myhost.com
+     User root
+     ServerAliveInterval 30
+     ServerAliveCountMax 3
+  ```
