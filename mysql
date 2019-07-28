@@ -1,5 +1,5 @@
 ### 为了测试中间层业务，需要熟悉数据库的基本操作
-- mysql
+- mysql安装，配置
   - 1. 安装
     - https://www.centos.bz/2019/02/centos7-%E5%AE%89%E8%A3%85-mysql/
   - 2. 配置密码
@@ -12,3 +12,20 @@
     - select host, user from user;
     - quit
     - service mysqld restart
+- node中mysql操作（sql语句）
+  - 1.库，表相关
+    - create database test; 创建库
+    - USE test;
+    - SELECT DATABASE(); 查看当前库
+    - CREATE TABLE te1(id int(20) primary key auto_increment , username VARCHAR(20) unique key NOT NULL ,age TINYINT UNSIGNED, salary FLOAT(8,2) UNSIGNED); 建表，对应字段和数据类型及限制
+    - SHOW TABLES;
+    - SHOW COLUMNS FROM te1; 显示表结构
+  - 2.插入查询
+    - INSERT TABLENAME(KEY,KEY) VALUES('HHHH','BLABLAL');  KEY如果不填时，说明全部字段均要输入
+    - SELECT xxx FROM TABLE
+  - 3.外键设置
+    - 条件，子表的外键必须与父表数据类型一致
+    - CREATE TABLE users(id SMALLINT UNSIGNED PRIMARY KEY AUTO_INCREMENT, 
+      username VARCHAR(20) NOT NULL,
+      pid SMALLINT UNSIGNED,
+      FOREIGN KEY (pid) REFERENCES provinces (id)); // 外键设置为Pid,参考provinces表中的id
