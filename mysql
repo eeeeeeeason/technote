@@ -45,4 +45,7 @@
     - ALTER TABLE users DROP age
   - 5.更新与删除
     - UPDATE user set sex=0, age = age + 10 where id % 2 = 0;
+    - update连接子表更新 INNER JOIN 
+      - UPDATE tdb_goods INNER JOIN tdb_goods_brands on tdb_goods_brands.brand_name = tdb_goods.brand_name set tdb_goods.brand_name = brand_id;
     - DELETE FROM user WHERE id = 6;
+    
