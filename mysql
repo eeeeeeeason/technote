@@ -12,6 +12,16 @@
     - select host, user from user;
     - quit
     - service mysqld restart
+  - 4.修改字符集为utf8,默认为latin1
+    ```
+    [mysqld]
+    character-set-server=utf8
+    init_connect = 'SET NAMES utf8'
+    collation-server=utf8_general_ci
+    [client]
+    default-character-set=utf8
+    ```
+    - alter table testtb convert to charset utf8; 表中修改
 - node中mysql操作（sql语句）
   - 1.库，表相关
     - create database test; 创建库
@@ -23,9 +33,16 @@
   - 2.插入查询
     - INSERT TABLENAME(KEY,KEY) VALUES('HHHH','BLABLAL');  KEY如果不填时，说明全部字段均要输入
     - SELECT xxx FROM TABLE
+      - select * from user order by age desc Limit 2,2; 降序查询 limit限制返回条数索引为2开始返回两条
   - 3.外键设置
     - 条件，子表的外键必须与父表数据类型一致
     - CREATE TABLE users(id SMALLINT UNSIGNED PRIMARY KEY AUTO_INCREMENT, 
       username VARCHAR(20) NOT NULL,
       pid SMALLINT UNSIGNED,
       FOREIGN KEY (pid) REFERENCES provinces (id)); // 外键设置为Pid,参考provinces表中的id
+  - 4.表结构修改
+    - ALTER TABLE users ADD age TINYINT UNSIGNED NOT NULL DEFAULT 10; 添加
+    - ALTER TABLE users DROP age
+  - 5.更新与删除
+    - UPDATE user set sex=0, age = age + 10 where id % 2 = 0;
+    - DELETE FROM user WHERE id = 6;
