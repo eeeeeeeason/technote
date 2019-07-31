@@ -22,7 +22,7 @@
     default-character-set=utf8
     ```
     - alter table testtb convert to charset utf8; 表中修改
-- node中mysql操作（sql语句）
+- mysql操作（sql语句）
   - 1.库，表相关
     - create database test; 创建库
     - USE test;
