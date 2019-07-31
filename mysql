@@ -48,4 +48,7 @@
     - update连接子表更新 INNER JOIN 
       - UPDATE tdb_goods INNER JOIN tdb_goods_brands on tdb_goods_brands.brand_name = tdb_goods.brand_name set tdb_goods.brand_name = brand_id;
     - DELETE FROM user WHERE id = 6;
+  - 6.多表更新
+    - 实际上为多张表根据相同字段进行拼接。 属性为join table on 条件
+    - SELECT goods_name, goods_cate, brand_name from tdb_goods as g inner join tdb_cate as c on g.cate_id = c.cate_id inner join tdb_goods_brands1 as b on b.brand_id = g.brand_id;
     
